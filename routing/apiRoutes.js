@@ -1,17 +1,19 @@
 
-module.exports = function(app) {
-  app.get("/api/friends", function(req, res) {
-    res.json(waitListData);
-  });
+var friendData = require("../app/data/friend");
 
-  app.post("/api/tables", function(req, res) {
+module.exports = function (app) {
+    app.get("/api/friends", function (req, res) {
+        res.json(friendData);
+    });
+}
 
 
-  app.post("/api/clear", function(req, res) {
-    // Empty out the arrays of data
-    tableData.length = 0;
-    waitListData.length = 0;
+  // API POST Requests
+app.post("/api/friends", function (req, res) {
+    friendData.findAll({}).then(function (results) {
+        res.json(results);
+    });
+});
 
-    res.json({ ok: true });
-  });
-};
+   
+    

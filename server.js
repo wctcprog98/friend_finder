@@ -12,6 +12,10 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//starts at public
+
+app.use(express.static("public"));
+
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
@@ -29,3 +33,4 @@ app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
 
+module.exports = app;
