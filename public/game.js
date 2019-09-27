@@ -1,5 +1,5 @@
 
-var totalDifference = 0;
+// var totalDifference = 0;
       $("#submit").on("click", function(event) {
         event.preventDefault();
       
@@ -19,7 +19,6 @@ var totalDifference = 0;
           });
           return isValid;
         }
-  
     
         if (formValidation()) {
           // Create an object for the user"s data
@@ -40,15 +39,19 @@ var totalDifference = 0;
             ]
           };
           
-         //calculate total difference using math.abs
+         //calculate total difference using math.abs and generate matches 
           for (var i = 0; i < userData.length; i++)
           {
-            totalDifference += Math.abs(userData[i]);
+            var C = [];
+  for(let i = 0; i < A.length; i++) {
+    C.push(Math.abs(userData[i] - tableArray[i]));
+    console.log(tableArray); 
+}
             
             }
-          console.log(totalDifference); 
+    
           // AJAX post to the friends API.
-          $.post("", userData, function(data) {
+          $.post("/api/friend", userData, function(data) {
   
             // Grab users match
             $("#match-name").text(data.name);
