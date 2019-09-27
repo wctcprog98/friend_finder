@@ -40,12 +40,15 @@
           };
           
          //calculate total difference using math.abs and generate matches 
+          
+          
           for (var i = 0; i < userData.length; i++)
           {
             var C = [];
   for(let i = 0; i < A.length; i++) {
     C.push(Math.abs(userData[i] - tableArray[i]));
     console.log(tableArray); 
+    console.log(userData); 
 }
             
             }

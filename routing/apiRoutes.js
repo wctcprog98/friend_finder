@@ -7,10 +7,10 @@ module.exports = function (app) {
         // API POST Requests
     });
     app.post("/api/friend", function (req, res) {
-        friendData.findAll({}).then(function (results) {
-            res.json(results);
+        // friendData.findAll({}).then(function (results) {
+            res.json(friendData);
         });
-    });
+    // });
 }
 
    
