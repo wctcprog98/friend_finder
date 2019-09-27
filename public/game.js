@@ -1,9 +1,7 @@
 
-  
+var totalDifference = 0;
       $("#submit").on("click", function(event) {
         event.preventDefault();
-        
-  
       
         function formValidation() {
           var isValid = true;
@@ -42,7 +40,13 @@
             ]
           };
           
-          console.log(userData); 
+         //calculate total difference using math.abs
+          for (var i = 0; i < userData.length; i++)
+          {
+            totalDifference += Math.abs(userData[i]);
+            
+            }
+          console.log(totalDifference); 
           // AJAX post to the friends API.
           $.post("", userData, function(data) {
   
