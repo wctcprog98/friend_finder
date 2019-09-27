@@ -7,14 +7,12 @@ var PORT = process.env.PORT || 8080;
 
 // Tells node that we are creating an "express" server
 var app = express();
-
+app.use(express.static("public"));
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//starts at public
 
-app.use(express.static("public"));
 
 // ================================================================================
 // ROUTER
@@ -22,8 +20,8 @@ app.use(express.static("public"));
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routing/apiRoutes")(app);
 require("./routing/htmlRoutes")(app);
+require("./routing/apiRoutes")(app);
 
 // =============================================================================
 // LISTENER
