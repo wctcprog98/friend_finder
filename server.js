@@ -2,6 +2,7 @@
 // ===========================================================
 var express = require("express");
 var app = express();
+var mysql = require('mysql'); 
 //setup for Heroku 
 var PORT = process.env.PORT || 8080; 
 
