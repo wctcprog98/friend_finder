@@ -21,4 +21,4 @@ To start the app you will need to install a few packages, run the following comm
 * Bootstrap
 
 
-[Click here to see the app!](https://wctcprog98.github.io/friend_finder/)
+[Click here to see the app!](https://secret-fortress-73315.herokuapp.com/)
